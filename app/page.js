@@ -9,6 +9,7 @@ const tools = [
   { icon: "✎", title: "Blog", description: "Guides for writing and learning Urdu", href: "/blog" }
 ];
 
+
 export default function Home() {
   return <main>
     <header className="site-header">
