@@ -1,0 +1,4 @@
+import Navbar from "./Navbar";
+export default function ToolPage({ active, kicker, title, description, children }) {
+ return <main><Navbar active={active}/><section className="page-main"><div className="page-heading"><span className="section-kicker">{kicker}</span><h1>{title}</h1><p>{description}</p></div>{children}</section><footer className="site-footer"><a className="brand footer-brand" href="/"><span className="brand-mark">ر</span><span>Roman2Urdu.com</span></a><div className="footer-links"><a href="/">Roman to Urdu</a><a href="/names">Names</a><a href="/word-meanings">Word Meanings</a><a href="/poetry-maker">Poetry Maker</a><a href="/contact">Contact</a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Roman2Urdu Starter</span><span>Free Urdu language tools</span></div></footer></main>;
+}

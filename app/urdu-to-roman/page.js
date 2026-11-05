@@ -1,0 +1,5 @@
+"use client";
+import { useState } from "react";
+import ToolPage from "../../components/ToolPage";
+import { urduToRoman } from "../../lib/romanUrduConverter";
+export default function UrduToRomanPage(){const [text,setText]=useState("");const result=urduToRoman(text);const [copied,setCopied]=useState(false);return <ToolPage active="/urdu-to-roman" kicker="CONVERTER" title="Urdu to Roman Urdu" description="Convert Urdu script into readable Roman Urdu. Paste your text below and copy the result."><div className="simple-tool-card"><label>Urdu text<textarea dir="rtl" lang="ur" value={text} onChange={e=>setText(e.target.value)} placeholder="یہاں اردو لکھیں..."/></label><div className="simple-output"><span>ROMAN OUTPUT</span><p>{result||"Your result will appear here."}</p></div><div className="button-row"><button className="button button-primary" onClick={async()=>{await navigator.clipboard.writeText(result);setCopied(true);}}> {copied?"Copied ✓":"Copy result ↗"}</button><button className="button button-quiet" onClick={()=>{setText("");setCopied(false);}}>Clear</button></div></div></ToolPage>}
